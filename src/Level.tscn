@@ -139,6 +139,6 @@ position = Vector2( 860.67, 162.014 )
 [node name="Coin4" parent="Coins" instance=ExtResource( 3 )]
 position = Vector2( 818.761, 209.545 )
 
-[connection signal="value_changed" from="AngleSlider" to="Ball" method="_on_AngleSlider_value_changed"]
 [connection signal="value_changed" from="AngleSlider" to="." method="_on_AngleSlider_value_changed"]
+[connection signal="value_changed" from="AngleSlider" to="Ball" method="_on_AngleSlider_value_changed"]
 [connection signal="body_entered" from="Coins/Coin" to="." method="_on_Coin_body_entered"]
