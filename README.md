@@ -9,11 +9,11 @@ The aim is to catch at least one coin! Use the slider on the left to adjust the 
 Though somewhat time consuming, this project was rather fun to work on. Throughout the process, I found myself referencing previous projects and in-class tutorials. This allowed me to piece together different parts from each project, then further build on that using what I've learnt about Godot so far. For example, to set up the coins for this project, I referenced what we did in class for the Collector tutorial. 
 There was one feature that I found particularly difficult as I didn't have a lot of previous experience with; the visual angle indicator. However, combining what I could find about the Line2D node and what I've learnt about Vector2D, I was able to add a short trajectory line that adjusts with the user's selected angle. 
 
-- [ ] D-1: The repository link is submitted to Canvas before the project deadline.
+- [x] D-1: The repository link is submitted to Canvas before the project deadline.
 - [x] D-2: The repository contains a <code>README.md</code> file in its top-level directory.
 - [X] D-3: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
 - [x] C-1: Your repository is well-formed, with an appropriate <code>.gitignore</code> file and no unnecessary files tracked.
-- [ ] C-2: Your release is tagged using <a href="https://semver.org/">semantic versioning</a> where the major version is zero, the minor version is the iteration number, and the patch version is incremented as usual for each change made to the minor version, and the release name matches the release tag.
+- [x] C-2: Your release is tagged using <a href="https://semver.org/">semantic versioning</a> where the major version is zero, the minor version is the iteration number, and the patch version is incremented as usual for each change made to the minor version, and the release name matches the release tag.
 - [X] C-3: You have a clear legal right to use all incorporated assets, and the licenses for all third-party assets are tracked in the <code>README.md</code> file.
 - [x] C-4: The <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game itself.
 - [X] C-5: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of T or less.
