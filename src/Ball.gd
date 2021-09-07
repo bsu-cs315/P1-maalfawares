@@ -16,7 +16,6 @@ func _process(delta):
 	elif Input.is_action_just_released("launch"):
 		var velocity = Vector2.RIGHT.rotated(deg2rad(-angle)) * strength
 		apply_impulse(Vector2.ZERO, velocity)
-		
 
 
 func update_angle_label():
