@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/elementWood010.png" type="Texture" id=2]
+[ext_resource path="res://src/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Level.gd" type="Script" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
@@ -30,12 +32,113 @@ points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
 0/z_index = 0
 
 [node name="Level" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="EndMessage" type="Label" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 325.785
+margin_top = 199.521
+margin_right = 381.785
+margin_bottom = 213.521
+rect_scale = Vector2( 4.49836, 3.90514 )
+text = "Message"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 522.267, 271.586 )
+position = Vector2( 140.099, 386.681 )
+strength = 200.0
+
+[node name="Line2D" type="Line2D" parent="Ball"]
+points = PoolVector2Array( 0.367371, 2.0437 )
+width = 7.0
+default_color = Color( 0.905882, 0.682353, 0.898039, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 70, 70 )
 format = 1
 tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0 )
+
+[node name="AngleSlider" type="VSlider" parent="."]
+margin_left = 25.1036
+margin_top = 84.2119
+margin_right = 41.1036
+margin_bottom = 247.212
+max_value = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AngleLabel" type="Label" parent="HUD"]
+margin_left = 15.3326
+margin_top = 256.565
+margin_right = 55.3326
+margin_bottom = 270.565
+text = "Angle:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StrengthLabel" type="Label" parent="HUD"]
+margin_left = 79.7295
+margin_top = 39.3536
+margin_right = 136.73
+margin_bottom = 53.3536
+text = "Strength:
+(Hold down to increase strength)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AngleValue" type="Label" parent="HUD"]
+margin_left = 16.3548
+margin_top = 275.987
+margin_right = 56.3548
+margin_bottom = 289.987
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StrengthValue" type="Label" parent="HUD"]
+margin_left = 149.237
+margin_top = 39.8647
+margin_right = 189.237
+margin_bottom = 53.8647
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 816.716, 119.083 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 771.229, 164.059 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 860.67, 162.014 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 818.761, 209.545 )
+
+[connection signal="value_changed" from="AngleSlider" to="Ball" method="_on_AngleSlider_value_changed"]
+[connection signal="value_changed" from="AngleSlider" to="." method="_on_AngleSlider_value_changed"]
+[connection signal="body_entered" from="Coins/Coin" to="." method="_on_Coin_body_entered"]
