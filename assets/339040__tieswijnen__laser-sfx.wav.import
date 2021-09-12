@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/339040__tieswijnen__laser-sfx.wav-cd4943c73716374cd5ba52d68dd699ff.sample"
+
+[deps]
+
+source_file="res://assets/339040__tieswijnen__laser-sfx.wav"
+dest_files=[ "res://.import/339040__tieswijnen__laser-sfx.wav-cd4943c73716374cd5ba52d68dd699ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
