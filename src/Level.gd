@@ -1,14 +1,24 @@
 extends Node2D
 
-onready var path_line = $Ball/Line2D
+onready var path_line 
 export var Yangle = 0
 export var lives = 3
+var ball : RigidBody2D
+export var score = 0
+
+func _ready():
+	make_ball()
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_released("launch"):
 		path_line.hide()
 		$LaserSound.play()
+		yield(get_tree().create_timer(5), "timeout")
+		update_lives()
+		
+		ball.queue_free()
+		make_ball()
 
 func update_line(ang):
 	path_line.clear_points()
@@ -19,7 +29,24 @@ func update_line(ang):
 func _on_AngleSlider_value_changed(value):
 	Yangle=value
 	update_line(Yangle)
-
+	ball.set_angle(Yangle)
+	
+	
+func make_ball():
+	if (lives > 0):
+		ball = load("res://src/Ball.tscn").instance()
+		ball.position = Vector2(144,384)
+		add_child(ball)
+		path_line = ball.get_node("Line2D")
+		
 func update_lives():
-	lives -= 1
-	print (str(lives) + "left")
+	lives-=1
+	$HUD/LivesLabel.text = "Lives Left: " + str(lives) + "/3"
+	if (lives <= 0):
+		$EndScene.visible = true
+		$EndScene/TextureRect/ScoreLabel.text = "Score: " + str(score)
+		
+		
+		
+		
+

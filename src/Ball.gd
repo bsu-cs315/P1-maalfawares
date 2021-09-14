@@ -3,11 +3,9 @@ extends RigidBody2D
 export var strength : float = 50
 export var strength_increase = 5
 export var angle = 0
-export var score = 0 
-export var lives = 3
 
 
-func _process(delta):
+func _process(_delta):
 	update_angle_label()
 	
 	#Increase strength while spacebar held
@@ -19,7 +17,6 @@ func _process(delta):
 	elif Input.is_action_just_released("launch"):
 		var velocity = Vector2.RIGHT.rotated(deg2rad(-angle)) * strength
 		apply_impulse(Vector2.ZERO, velocity)
-		get_owner().update_lives()
 
 
 func update_angle_label():
@@ -30,13 +27,11 @@ func update_strength_label():
 	var strength_display = get_parent().get_node("HUD/StrengthLabel")
 	strength_display.text = "Strength: " + str(strength)
 	
-func _on_AngleSlider_value_changed(value):
+func set_angle(value):
 	angle = value
 	
 func add_score():
-	score +=1
+	get_parent().score +=1
 	var score_display = get_parent().get_node("HUD/ScoreLabel")
-	score_display.text = "Score: " + str(score)
-	
-
+	score_display.text = "Score: " + str(get_parent().score)
 	

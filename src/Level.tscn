@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://src/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/EndScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/elementWood010.png" type="Texture" id=2]
 [ext_resource path="res://src/Coin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Level.gd" type="Script" id=4]
@@ -34,22 +34,22 @@ points = PoolVector2Array( 70, 70, 0, 70, 0, 0, 70, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="DynamicFont" id=4]
-size = 21
-font_data = ExtResource( 6 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 21
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 size = 21
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 21
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 21
 font_data = ExtResource( 6 )
 
@@ -65,30 +65,6 @@ texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="EndMessage" type="Label" parent="."]
-visible = false
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 325.785
-margin_top = 199.521
-margin_right = 381.785
-margin_bottom = 213.521
-rect_scale = Vector2( 4.49836, 3.90514 )
-text = "Message"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 384 )
-strength = 200.0
-
-[node name="Line2D" type="Line2D" parent="Ball"]
-points = PoolVector2Array( 0.367371, 2.0437 )
-width = 7.0
-default_color = Color( 0.905882, 0.682353, 0.898039, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -118,7 +94,7 @@ margin_left = 15.3326
 margin_top = 256.565
 margin_right = 55.3326
 margin_bottom = 270.565
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Angle:"
 __meta__ = {
@@ -130,7 +106,7 @@ margin_left = 24.0
 margin_top = 16.0
 margin_right = 127.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Strength:"
 __meta__ = {
@@ -142,7 +118,7 @@ margin_left = 23.0
 margin_top = 44.0
 margin_right = 295.0
 margin_bottom = 66.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "(Hold down to increase strength)"
 
@@ -151,7 +127,7 @@ margin_left = 384.0
 margin_top = 16.0
 margin_right = 455.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Score:"
 
@@ -160,9 +136,12 @@ margin_left = 760.0
 margin_top = 16.0
 margin_right = 876.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lives Left:"
+text = "Lives Left: 3/3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Coins" type="Control" parent="."]
 margin_right = 40.0
@@ -204,7 +183,8 @@ position = Vector2( 817.408, 179.785 )
 [node name="LaserSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
+[node name="EndScene" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 384, 144 )
+
 [connection signal="value_changed" from="AngleSlider" to="." method="_on_AngleSlider_value_changed"]
-[connection signal="value_changed" from="AngleSlider" to="Ball" method="_on_AngleSlider_value_changed"]
-[connection signal="body_entered" from="Coins/Coin" to="." method="_on_Coin_body_entered"]
-[connection signal="coin_collect" from="Coins/Coin" to="." method="coin_collect"]
