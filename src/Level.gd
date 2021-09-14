@@ -16,7 +16,6 @@ func _process(_delta):
 		$LaserSound.play()
 		yield(get_tree().create_timer(5), "timeout")
 		update_lives()
-		
 		ball.queue_free()
 		make_ball()
 
