@@ -35,7 +35,7 @@ func _on_AngleSlider_value_changed(value) -> void:
 	
 func make_ball() -> void:
 	if lives > 0:
-		ball = load("res://src/Ball.tscn").instance()
+		ball = load("res://src/Ball/Ball.tscn").instance()
 		ball.position = Vector2(144,384)
 		add_child(ball)
 		path_line = ball.get_node("Line2D")

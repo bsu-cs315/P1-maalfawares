@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://src/EndScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/EndScene/EndScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/elementWood010.png" type="Texture" id=2]
-[ext_resource path="res://src/Coin.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Level.gd" type="Script" id=4]
+[ext_resource path="res://src/Coin/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Level/Level.gd" type="Script" id=4]
 [ext_resource path="res://assets/blue_shroom.png" type="Texture" id=5]
 [ext_resource path="res://assets/Tourney-Medium.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/339040__tieswijnen__laser-sfx.wav" type="AudioStream" id=7]
