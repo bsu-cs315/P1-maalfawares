@@ -6,26 +6,26 @@ A simple 2D physics-based action game by Mera Alfawares.
 Try to catch all the coins! Use the slider on the left to adjust the angle at which you are launching the alien. Then, press and hold down on your space bar to increase the strength of your launch. Releasing the space bar will launch the alien - hopefully, towards the coins! You have three lives to catch as many coins as you can.
 
 ## Project Report
-Working on this iteration was rather fun! For the graphics requirement, I only needed to add a background. As for the sound effects, adding them was fairly straightforward as I had done it for the Collector tutorial. Lastly, to set up the limited projectiles, I not only added to my scripts, but I needed to adjust a lot of what I had done for the previous iteration too. For example, rather than having one instance of the projectile at the very start, I followed the suggestion from the project description and had it spawned from its own scene. This meant I had to find a work around for the signals that were initially connected to the projectile instance. This, however, was easily solved and not the main challenge that I ran into. Instead, it was when the Play Project button seemed to stop working, and Godot would not display a window for any scene played. There were no errors displayed in the debugger which led me to believe this was an issue with the application and not my project. However, after restarting Godot and my computer, it still wasn't working. Eventually, I discovered that it was a problem from within my scripts - that was not throwing an error for some reason - in relation to spawing the projectile and then removing it from the scene. Overall, I'm glad that this happened during one of the earlier projects, so that if it does happen again I at least know where to begin solving it. 
+During this iteration, I was able to get the animation and main menu tasks done rather quickly. This allowed me plenty of time to review the style guide and edit my code accordingly. There were not any great changes that I had to make, however, I did need to be thorough when going through each variable, function, etc. to make sure that it fits the documentation's notes. I found myself checking each file repeatedly and upon reflection, I recognize that one should review the style guide _before_ beginning a project. I also noticed that I would often be too preoccupied with completing the assignment that I forget to commit the changes for each new feature. Due to that, I end up having to clump all my changes into one commit, which is not good practice. To improve in future projects, I will place certain "checkpoints" to remind myself to commit and push, before moving on to the next step.
 
-- [X] D-1: The repository link is submitted to Canvas before the project deadline.
-- [X] D-2: The repository contains a <code>README.md</code> file in its top-level directory.
-- [X] D-3: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
-- [X] C-1: Your repository is well-formed, with an appropriate <code>.gitignore</code> file and no unnecessary files tracked.
-- [X] C-2: Your release is tagged using <a href="https://semver.org/">semantic versioning</a> where the major version is zero, the minor version is the iteration number, and the patch version is incremented as usual for each change made to the minor version, and the release name matches the release tag.
-- [X] C-3: You have a clear legal right to use all incorporated assets, and the licenses for all third-party assets are tracked in the <code>README.md</code> file.
-- [X] C-4: The <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game itself.
-- [X] C-5: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of T or less.
-- [X] C-6: The projectile and targets are shown with 2D graphics.
-- [X] C-7: The game plays an appropriate sound effect when the projectile is fired.
-- [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
-- [X] B-2: Earn one star.
-- [X] A-1: Earn three stars.
-- [X] ⭐ The player has a small inventory of projectiles, and only one can be launched at a time.
-- [X] ⭐ The background and ground use 2D graphics.
-- [X] ⭐ A <abbr title="Heads-Up Display">HUD</abbr> shows the current game state such as the score and number of projectiles remaining.
+- [x] D-1: The repository link is submitted to Canvas before the project deadline.
+- [x] D-2: The repository contains a <code>README.md</code> file in its top-level directory.
+- [x] D-3: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
+- [x] C-1: Your repository is well-formed, with an appropriate <code>.gitignore</code> file and no unnecessary files tracked.
+- [x] C-2: Your release is tagged using <a href="https://semver.org/">semantic versioning</a> where the major version is zero, the minor version is the iteration number, and the patch version is incremented as usual for each change made to the minor version, and the release name matches the release tag.
+- [x] C-3: You have a clear legal right to use all incorporated assets, and the licenses for all third-party assets are tracked in the <code>README.md</code> file.
+- [x] C-4: The <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game itself.
+- [x] C-5: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of T or less.
+- [x] C-6: The game starts on a title screen. Interacting with the title screen moves the player into the gameplay screen.
+- [x] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
+- [x] B-2: Earn one star.
+- [x] A-1: Generate neither warnings nor errors at runtime.
+- [x] A-2: Earn three stars.
+- [x] ⭐ When the game is over, the player can interact to take the game back to the title screen, from which the game can be played again.
+- [x] ⭐ Use an <code>AnimationPlayer</code> or <code>Tween</code> to add some pop to the user-interface.
+- [x] ⭐ The source code complies with our adopted style guide.
 
-Again, I have attempted to fulfill all the requirements and hope to get an A. I have completed all three stars and all the project/repository details listed in categories C and D. 
+My submission this iteration earns an A as I have completed all requirements from each tier. 
 
 ## Third-Party Assets
 
@@ -36,4 +36,8 @@ Laser Sound is from "Laser SFX.wav". Created in 2016 by [TiesWijnen](https://fre
 
 Coin Sound is from "Coins 1". Created in 2016 by [ProjectsU012](https://freesound.org/people/ProjectsU012/), [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/). Source: https://freesound.org/people/ProjectsU012/sounds/341695/
 
+Background Music from "Game background Music loop short". Created in 2017 by [yummie](https://freesound.org/people/yummie/), [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/). Source: https://freesound.org/people/yummie/sounds/410574/
+
 Font Tourney Medium. Source: https://fonts.google.com/specimen/Tourney?sort=date licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Font Fascinate. Source: https://fonts.google.com/specimen/Fascinate licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
