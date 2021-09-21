@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/410574__yummie__game-background-music-loop-short.mp3-ab8bf020e493f7cbf769dae994a78363.mp3str"
+
+[deps]
+
+source_file="res://assets/410574__yummie__game-background-music-loop-short.mp3"
+dest_files=[ "res://.import/410574__yummie__game-background-music-loop-short.mp3-ab8bf020e493f7cbf769dae994a78363.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
